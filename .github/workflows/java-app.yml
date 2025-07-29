@@ -1,0 +1,16 @@
+name: java cal test
+on: workflow_dispatch
+jobs:
+  test: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4.2.2
+      - name: java installation
+        uses: actions/setup-java@v3.14.1
+        with:
+          java-version: 17
+      - name: install dependencies
+        run: mvn clean install
+      - name: Run Tests
+        run: mvn test
