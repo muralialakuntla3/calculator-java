@@ -10,6 +10,7 @@ jobs:
         uses: actions/setup-java@v3.14.1
         with:
           java-version: 17
+          distribution: jdk
       - name: install dependencies
         run: mvn clean install
       - name: Run Tests
